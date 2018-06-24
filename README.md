@@ -1,0 +1,1 @@
+# openssl-cert-gen-template

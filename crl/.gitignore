@@ -1,0 +1,4 @@
+# Don't checkin anything in this directory to github!
+*
+# Except this file
+!.gitignore
