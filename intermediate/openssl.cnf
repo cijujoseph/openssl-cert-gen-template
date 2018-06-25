@@ -1,5 +1,4 @@
 # OpenSSL intermediate CA configuration file.
-# Copy to `/root/ca/intermediate/openssl.cnf`.
 
 [ ca ]
 # `man ca`
@@ -7,7 +6,7 @@ default_ca = CA_default
 
 [ CA_default ]
 # Directory and file locations.
-dir               = /root/ca/intermediate
+dir               = /Users/cijujoseph/openssl-cert-gen-template/intermediate
 certs             = $dir/certs
 crl_dir           = $dir/crl
 new_certs_dir     = $dir/newcerts
