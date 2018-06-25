@@ -11,6 +11,8 @@ Clone this repo and follow the instructions for the following:
 This repo structure is created based on [this documentation](https://jamielinux.com/docs/openssl-certificate-authority/index.html). For detailed explanation on the following steps, please refer the above mentioned docs!  
 
 #### Create root CA pair
+> When prompted for CN, use "Alfresco Software Inc Root CA" as CN. Root key will be generated at private/ca.key.pem. Root certificate generated can be found at certs/ca.cert.pem
+> You may also want to provide a valid directory in the openssl.cnf for "dir"
 
 ```
 cd openssl-cert-gen-template
@@ -21,9 +23,11 @@ openssl req -config openssl.cnf \
       -out certs/ca.cert.pem
 openssl x509 -noout -text -in certs/ca.cert.pem
 ```
-> When prompted for CN, use "Alfresco Software Inc Root CA" as CN. Root key will be generated at private/ca.key.pem. Root certificate generated can be found at certs/ca.cert.pem
 
 #### Create intermediate CA pair
+
+> When prompted for CN, use "Alfresco Software Inc Intermediate CA" as CN. Intermediate CA key will be generated at intermediate/private/intermediate.key.pem. Intermediate certificate can be found at intermediate/certs/intermediate.cert.pem
+> You may also want to provide a valid directory in the openssl.cnf for "dir"
 
 ```
 cd intermediate
@@ -47,9 +51,10 @@ openssl verify -CAfile ../certs/ca.cert.pem \
 cat certs/intermediate.cert.pem \
       ../certs/ca.cert.pem > certs/ca-chain.cert.pem
 ```
-> When prompted for CN, use "Alfresco Software Inc Intermediate CA" as CN. Intermediate CA key will be generated at intermediate/private/intermediate.key.pem. Intermediate certificate can be found at intermediate/certs/intermediate.cert.pem
 
 #### Create & sign a client certificate
+
+> When prompted for CN, enter CN as admin@app.activiti.com (Alfresco Process Services default userid)
 
 ```
 cd intermediate
@@ -70,9 +75,10 @@ openssl x509 -noout -text \
 openssl verify -CAfile certs/ca-chain.cert.pem \
       certs/admin.cert.pem
 ```
-> When prompted for CN, enter CN as admin@app.activiti.com (Alfresco Process Services default userid)
 
 #### Create & sign a server certificate
+
+> When prompted for CN, enter CN as localhost (for localhost apps)
 
 ```
 cd intermediate
@@ -93,7 +99,6 @@ openssl x509 -noout -text \
 openssl verify -CAfile certs/ca-chain.cert.pem \
       certs/localhost.cert.pem
 ```
-> When prompted for CN, enter CN as localhost (for localhost apps)
 
 #### Create a keystore for app server configuration
 
