@@ -112,7 +112,7 @@ openssl pkcs12 -export -chain \
 	-CAfile intermediate/certs/ca-chain.cert.pem
 	
 keytool -importkeystore \
-	-destkeystore keystore/keystorex.jks \
+	-destkeystore keystore/keystore.jks \
 	-srckeystore keystore/keystore.p12 \
 	-srcstoretype PKCS12
 ```
