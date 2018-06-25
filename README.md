@@ -56,7 +56,7 @@ cat certs/intermediate.cert.pem \
 
 #### Create & sign a client certificate
 
-> When prompted for CN, enter CN as admin@app.activiti.com (Alfresco Process Services default userid)
+> When prompted for CN, enter CN and email as admin and admin@app.activiti.com (Alfresco Process Services default userid) respectively
 
 ```
 cd intermediate
