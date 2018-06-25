@@ -8,7 +8,7 @@ Clone this repo and follow the instructions for the following:
 * Import server certs in JKS format 
 * Import CAs into a truststore
 
-This repo structure is created based on [this documentation] (https://jamielinux.com/docs/openssl-certificate-authority/index.html). For detailed explanation on the following steps, please refer the above mentioned docs!  
+This repo structure is created based on [this documentation](https://jamielinux.com/docs/openssl-certificate-authority/index.html). For detailed explanation on the following steps, please refer the above mentioned docs!  
 
 #### Create root CA pair
 
