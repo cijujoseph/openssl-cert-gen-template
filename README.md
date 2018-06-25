@@ -12,6 +12,7 @@ This repo structure is created based on [this documentation](https://jamielinux.
 
 #### Create root CA pair
 > When prompted for CN, use "Alfresco Software Inc Root CA" as CN. Root key will be generated at private/ca.key.pem. Root certificate generated can be found at certs/ca.cert.pem
+
 > You may also want to provide a valid directory in the openssl.cnf for "dir"
 
 ```
@@ -27,6 +28,7 @@ openssl x509 -noout -text -in certs/ca.cert.pem
 #### Create intermediate CA pair
 
 > When prompted for CN, use "Alfresco Software Inc Intermediate CA" as CN. Intermediate CA key will be generated at intermediate/private/intermediate.key.pem. Intermediate certificate can be found at intermediate/certs/intermediate.cert.pem
+
 > You may also want to provide a valid directory in the openssl.cnf for "dir"
 
 ```
