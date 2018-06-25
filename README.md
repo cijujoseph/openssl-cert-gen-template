@@ -104,6 +104,8 @@ openssl verify -CAfile certs/ca-chain.cert.pem \
 
 #### Create a keystore for app server configuration
 
+> When prompted for password for the next two steps (export and keystore), use the same password
+
 ```
 openssl pkcs12 -export -chain \
 	-in intermediate/certs/localhost.cert.pem \
