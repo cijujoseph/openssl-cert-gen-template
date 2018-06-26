@@ -107,6 +107,7 @@ openssl verify -CAfile certs/ca-chain.cert.pem \
 > When prompted for password for the next two steps (export and keystore), use the same password
 
 ```
+cd openssl-cert-gen-template
 openssl pkcs12 -export -chain \
 	-in intermediate/certs/localhost.cert.pem \
 	-inkey intermediate/private/localhost.key.pem \
@@ -121,6 +122,7 @@ keytool -importkeystore \
 #### Create a truststore with both root and intermediate CAs
 
 ```
+cd openssl-cert-gen-template
 keytool -import -alias rootca \
 	-file certs/ca.cert.pem \
 	-keystore truststore/truststore.jks
